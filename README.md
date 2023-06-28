@@ -27,7 +27,7 @@ python manage.py runserver
 - Register a new user by navigating to `/register` and filling out the form.
 - After registering, you will receive an OTP via email
 - Enter the OTP on the verification page to complete the registration process.
-- Log in using your registered credentials at `/login`.
+- Log in using your registered credentials at `/login`.\
   it is the part of my website you can see it in action at https://rahim-khan.azurewebsites.net/
 
 ## Contributing
