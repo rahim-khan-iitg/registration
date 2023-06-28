@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+{% block title %}Log In {% endblock %}
+{% block body %}
+<div class="container d-flex justify-content-center align-items-center">
+    <form action="{% url 'login' %}" method="post"  style="border: 2px solid white;border-radius: 10px;margin-top: 50px; padding: 20px;">
+        {% csrf_token %}
+        <fieldset class="m-2">
+            <legend><h2>Login</h2></legend>
+            <div class="row g-3 align-items-center mb-1">
+                <div class="col">
+                    <label for="inputPassword1" class="col-form-label">Email</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" id="inputPassword1" class="form-control" required  name="email">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mb-1">
+                <div class="col">
+                    <label for="inputPassword1" class="col-form-label">Password</label>
+                </div>
+                <div class="col-auto">
+                    <input type="password" id="inputPassword1" class="form-control" required name="password">
+                </div>
+            </div>
+        <div class="row align-items-center mb-1">
+            <div class="col">
+                <button class="btn btn-success" type="submit">Sign in</button>
+            </div>
+        </div>
+        <div class="row align-items-center mb-1">
+            <div class="col">
+                <a href="{% url 'register' %}">Signup</a>
+            </div>
+        </div>
+    </fieldset>
+    </form>
+</div>
+{% endblock %}

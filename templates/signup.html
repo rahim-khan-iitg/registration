@@ -1,0 +1,47 @@
+{% extends 'basic.html' %}
+{% block title %} Signup {% endblock %}
+{% block body %}
+<div class="container d-flex justify-content-center align-items-center">
+        <form action="{% url 'send_otp'%}" method="post" style="border: 2px solid white;border-radius: 10px;margin-top: 50px; padding: 20px;" id="form">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h2>Register</h2></legend>
+            <div class="row g-3 align-items-center mb-1">
+                <div class="col">
+                    <label for="staticEmail" class="col-form-label">Email</label>
+                </div>
+                <div class="col-auto">
+                    <input type="text" class="form-control" required name="email">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mb-1">
+                <div class="col">
+                    <label for="inputPassword" class="col-form-label">Password</label>
+                </div>
+                <div class="col-auto">
+                    <input type="password" class="form-control" required name="password">
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mb-1">
+                <div class="col">
+                    <label for="inputPassword" class="col-form-label">Confirm Password</label>
+                </div>
+                <div class="col-auto">
+                    <input type="password" class="form-control" required>
+                </div>
+            </div>
+            <div class="row g-3 align-items-center mb-1">
+                <div class="col">
+                    <button class="btn btn-success" type="submit" onclick="enable()">Send OTP</button>
+                </div>
+            </div>
+            <div class="row mb-1 g-3 align-items-center">
+                <div class="col">
+                    <a href="{% url 'login' %}">Already have an account</a>
+                </div>
+            </div>
+        </fieldset>
+        </form>
+        
+</div>
+{% endblock %}

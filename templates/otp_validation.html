@@ -1,0 +1,41 @@
+{% extends 'basic.html' %}
+{% block title %} OTP Validation {% endblock %}
+{% block body %}
+<div class="container d-flex justify-content-cenetr align-items-center">
+    <form action="{% url 'register'%}" method="post" style="border: 2px solid white;border-radius: 10px;margin-top: 50px; padding: 20px;">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h2>Register</h2></legend>
+        <div class="row g-3 mb-1 align-items-center">
+            <div class="col">
+                <label for="staticEmail" class="col-form-label">Email</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" name="email" value="{{email}}" readonly>
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mb-1" hidden>
+            <div class="col">
+                <label for="inputPassword" class=" col-form-label">Password</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" name="password" value="{{password}}" readonly>
+            </div>
+        </div>
+        <div class="row g-3 align-items-center mb-1">
+            <div class="col">
+                <label for="staticEmail" class=" col-form-label">OTP</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" class="form-control" name="otp">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-success" type="submit">Register</button>
+            </div>
+        </div>
+    </fieldset>
+    </form>
+</div>
+{% endblock %}
